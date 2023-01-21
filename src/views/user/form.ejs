@@ -1,0 +1,29 @@
+<form id="form" action="<%= action %>" method="POST">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h4>Data User</h4>
+          <div class="input-group input-group-static mb-4">
+            <label>Name</label>
+            <input class="form-control" name="name" type="text" value="<%= value.name%>" required />
+          </div>
+
+          <div class="input-group input-group-static mb-4">
+            <label>Username</label>
+            <input class="form-control" name="username" type="text" value="<%= value.username%>" required />
+          </div>
+
+          <div class="input-group input-group-static mb-4">
+            <label>Password</label>
+            <input class="form-control" name="password" type="password" min="6" value="<%= value.password%>" required />
+          </div>
+
+          <div class="col-md-12 mt-3">
+            <button type="submit" class="btn btn-primary col-md-12 col-sm-12">Simpan Data</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

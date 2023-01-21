@@ -1,0 +1,44 @@
+<form id="form" action="<%= action %>" method="POST">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h4>Data Kinerja Guru</h4>
+          <div class="input-group input-group-static mb-4">
+            <label>Name</label>
+            <input class="form-control"  
+            name="name"
+            type="text"
+            placeholder="Name"
+            value="<%= value.name%>" required />
+          </div>
+          <div class="input-group input-group-static mb-4">
+            <label>Bobot</label>
+            <input class="form-control"  
+            name="bobot"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="Bobot"
+          value="<%= value.bobot%>" required />
+          </div>
+
+          <div class="input-group input-group-static mb-4">
+            <label for="select" class="ms-0">Jenis</label>
+            <select class="form-control" id="select" name="jenis" required>
+              <% const a = value.jenis == 0 ? "selected" :""%>
+              <% const b = value.jenis == 1 ? "selected" :""%>
+              <option disabled selected value>Jenis</option>
+              <option <%=a%> value="0">Cost</option>
+              <option <%=b%> value="1">Benefit</option>
+            </select>
+          </div>
+          
+          <div class="col-md-12 mt-3">
+            <button type="submit" class="btn btn-primary col-md-12 col-sm-12">Simpan Data</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
