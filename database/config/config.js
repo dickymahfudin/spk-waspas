@@ -26,4 +26,20 @@ module.exports = {
       },
     },
   },
+  testing: {
+    username,
+    password,
+    database,
+    host,
+    dialect,
+    logging: false,
+    dialectOptions: {
+      dateStrings: true,
+      typeCast: true,
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
+  },
 };
