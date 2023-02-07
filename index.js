@@ -40,12 +40,12 @@ app.use((req, res, next) => {
   next();
 });
 app.use('/login', loginRouter);
-app.use('/user', middleware, userRouter);
-app.use('/teacher', middleware, teacherRouter);
-app.use('/kriteria', middleware, kriteriaRouter);
-app.use('/rumus', middleware, rumusRouter);
-app.use('/dashboard', middleware, dashboardRouter);
-app.use('/setting', middleware, settingRouter);
+app.use('/user', userRouter);
+app.use('/teacher', teacherRouter);
+app.use('/kriteria', kriteriaRouter);
+app.use('/rumus', rumusRouter);
+app.use('/dashboard', dashboardRouter);
+app.use('/setting', settingRouter);
 
 app.use('*', middleware, (req, res) => res.redirect('/dashboard'));
 

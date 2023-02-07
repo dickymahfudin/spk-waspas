@@ -179,6 +179,7 @@ const hitung = (dataVendor, kriteria) => {
     };
     const data = datas.map(data => {
       const array = Object.values(data);
+      console.log(array);
       return array.slice(2, array.length);
     });
     const matrix1 = data.map(matrix => {
@@ -228,7 +229,7 @@ const hitung = (dataVendor, kriteria) => {
   return { moora: hasilMoora, waspas: hasilWaspas, db };
 };
 
-// console.log(hitung(dataVendor, dataKriteria));
+console.log(hitung(dataVendor, dataKriteria));
 
 // Function to generate random number
 function randomNumber(min, max) {
