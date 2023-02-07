@@ -228,4 +228,148 @@ const hitung = (dataVendor, kriteria) => {
   return { moora: hasilMoora, waspas: hasilWaspas, db };
 };
 
-console.log(hitung(dataVendor, dataKriteria));
+// console.log(hitung(dataVendor, dataKriteria));
+
+// Function to generate random number
+function randomNumber(min, max) {
+  return (Math.random() * (max - min) + min).toFixed(3);
+}
+
+// console.log('Random Number between 1 and 5: ');
+// console.log(randomNumber(3, 5));
+
+const a = [
+  {
+    name: 'Ir. Liliek Rahmaningsih',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Deden Hendradi',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Dra. Liesye Yulianti',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Drs.Fuji Marhaen',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Erwin Hasiholan G.',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Sandi Sopyan',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Luki Nurdiansyah',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Aditya Nugraha',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Tun Utama P',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Sugino',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Tati Suryati',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Ari Adithya Chandra',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Zaenal Mutaqin',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Yeni Yuliawati',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Dara Purwanita',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+  {
+    name: 'Dra. Diana Octaria',
+    1: randomNumber(3, 5),
+    2: randomNumber(3, 5),
+    3: randomNumber(3, 5),
+    4: randomNumber(3, 5),
+  },
+];
+console.log(a);
+{
+}
+[
+  [3.807, 4.54, 3.954, 4.104],
+  [4.722, 3.032, 3.262, 3.04],
+  [3.464, 3.292, 3.046, 3.131],
+  [3.607, 3.915, 4.931, 4.661],
+  [3.22, 3.005, 4.135, 4.281],
+  [4.067, 4.72, 4.297, 3.732],
+  [4.866, 4.187, 3.61, 3.189],
+  [4.503, 3.452, 3.612, 4.205],
+  [3.076, 4.349, 3.464, 4.21],
+  [4.053, 4.971, 4.119, 3.752],
+  [4.439, 4.907, 4.232, 4.392],
+  [3.776, 3.806, 4.315, 4.048],
+  [4.745, 3.065, 3.737, 4.591],
+  [3.346, 4.346, 3.927, 4.144],
+  [3.529, 3.697, 4.257, 4.876],
+  [4.434, 3.954, 3.129, 3.094],
+];
