@@ -15,12 +15,12 @@ const criterias = async () => {
   ];
 
   const dataGuru = [
-    { name: 'Mila Yaelasari', result: '0.408' },
-    { name: 'Radiani Srirestuti', result: '0.469' },
-    { name: 'Agus Tiyono', result: '0.452' },
-    { name: 'Heny Handayani', result: '0.417' },
-    { name: 'Dea Rijaul', result: '0.465' },
-    { name: 'Putri Riandini', result: '0.465' },
+    { name: 'Mila Yaelasari', nuptk: 1, result: '0.408' },
+    { name: 'Radiani Srirestuti', nuptk: 2, result: '0.469' },
+    { name: 'Agus Tiyono', nuptk: 3, result: '0.452' },
+    { name: 'Heny Handayani', nuptk: 4, result: '0.417' },
+    { name: 'Dea Rijaul', nuptk: 5, result: '0.465' },
+    { name: 'Putri Riandini', nuptk: 6, result: '0.465' },
   ];
   const valueLink = [
     [4.625, 4.4, 4.425, 4.825],

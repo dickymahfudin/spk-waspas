@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   teacher.init(
     {
+      nuptk: DataTypes.STRING,
       name: DataTypes.STRING,
       result: DataTypes.FLOAT,
     },

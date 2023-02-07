@@ -4,6 +4,7 @@ const group = require('../helpers/group');
 const jsonToTable = require('../helpers/jsonToTable');
 const dataFormat = require('../helpers/dataFormat');
 const { teacher, kriteria, link } = require('../models');
+const { Op } = require('sequelize');
 
 router.get('/', async (req, res, next) => {
   const username = req.session.username;
@@ -24,18 +25,20 @@ router.get('/table', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   const data = req.body;
+
   const tempLocation = await teacher.findOne({
     where: {
-      name: data.name,
+      [Op.or]: [{ name: data.name }, { nuptk: data.nuptk }],
     },
   });
+
   if (tempLocation) {
-    req.flash('error', 'Nama Lokasi Tidak Boleh Sama');
+    req.flash('error', 'Nama Guru atau Nuptk Tidak Boleh Sama');
     return res.redirect('/teacher');
   }
-  const location = await teacher.create({ name: data.name, alamat: data.alamat, contact: data.contact });
+  const location = await teacher.create({ name: data.name, nuptk: data.nuptk, contact: data.contact });
   for (const value of Object.keys(data)) {
-    if (value != 'name' && value != 'alamat' && value != 'contact') {
+    if (value != 'name' && value != 'nuptk' && value != 'contact') {
       await link.create({
         kriteria_id: value,
         teacher_id: location.id,
@@ -51,12 +54,12 @@ router.post('/:id', async (req, res, next) => {
   const data = req.body;
   const { id } = req.params;
   const tempteacher = await teacher.findOne({ where: { id }, raw: true, nest: true });
-  console.log(tempteacher);
+
   if (tempteacher) {
-    teacher.update({ name: data.name }, { where: { id } });
+    teacher.update({ name: data.name, nuptk: data.nuptk }, { where: { id } });
   }
   for (const value of Object.keys(data)) {
-    if (value != 'name') {
+    if (value != 'name' && value != 'nuptk') {
       await link.update(
         {
           kriteria_id: value,
@@ -90,6 +93,7 @@ router.get('/form', async (req, res, next) => {
     action: '/teacher',
     forms,
     name: '',
+    nuptk: '',
     title: 'Teacher',
   });
 });
@@ -99,6 +103,7 @@ router.get('/form/:id', async (req, res, next) => {
   const kriterias = await kriteria.getAll();
   const tempForms = await link.getAll({ teacher_id: id });
   const name = tempForms[0]['teacher']['name'];
+  const nuptk = tempForms[0]['teacher']['nuptk'];
   const forms = kriterias.map(kriteria => {
     const passkriteria = kriteria.dataValues;
     const find = tempForms.find(asli => asli.kriteria_id == kriteria.id) || '';
@@ -108,6 +113,7 @@ router.get('/form/:id', async (req, res, next) => {
     action: `/teacher/${id}`,
     forms,
     name,
+    nuptk,
     title: 'Teacher',
   });
 });

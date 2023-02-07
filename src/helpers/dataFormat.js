@@ -8,6 +8,7 @@ const dataFormat = datas => {
         ...tempData,
         id: temp.teacher_id,
         name: temp.teacher.name,
+        nuptk: temp.teacher.nuptk,
         [name]: temp.value,
       };
     });
