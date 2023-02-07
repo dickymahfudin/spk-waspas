@@ -39,7 +39,7 @@ const criterias = async () => {
     // { name: 'Dara Purwanita' },
     // { name: 'Dra. Diana Octaria' },
   ];
-  dataGuru = dataGuru.map((el, i) => ({ ...el, nuptk: i + 1, name: el.name.toLowerCase() }));
+  dataGuru = dataGuru.map((el, i) => ({ ...el, nuptk: i + 1, name: el.name.toUpperCase() }));
   const valueLink = [
     [4.625, 4.4, 4.425, 4.825],
     [4.475, 4.525, 4.525, 4.625],
