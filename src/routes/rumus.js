@@ -13,7 +13,15 @@ router.get('/', async (req, res, next) => {
 
     const tempData = group(locations, 'teacher_id');
     let waspas;
-    const datas = dataFormat(tempData);
+    const datas = dataFormat(tempData).map(el => ({
+      id: el.id,
+      name: el.name,
+      Pedagogik: el.Pedagogik,
+      Sosial: el.Sosial,
+      Profesional: el.Profesional,
+      Kepribadian: el.Kepribadian,
+    }));
+
     if (locations.length > 1 && kriterias.length > 1) {
       const hitungs = hitung(datas, kriterias);
       waspas = hitungs.waspas;
@@ -34,6 +42,7 @@ router.get('/hitung', async (req, res, next) => {
 
     const tempData = group(locations, 'teacher_id');
     const datas = dataFormat(tempData);
+    console.log(datas);
     const hitungs = hitung(datas, kriterias);
     if (hitungs.waspas.hasil.length != 0) {
       let dbError = 0;
